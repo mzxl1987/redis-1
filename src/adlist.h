@@ -35,19 +35,19 @@
 #define __ADLIST_H__
 
 /* Node, List, and Iterator are the only data structures used currently. */
-
+/*  列表节点结构体的定义  */
 typedef struct listNode {
-    struct listNode *prev;
-    struct listNode *next;
+    struct listNode *prev;      // 上一节点指针
+    struct listNode *next;      // 下一节点指针
     void *value;
 } listNode;
 
-typedef struct listIter {
+typedef struct listIter {       // 列表序列
     listNode *next;
     int direction;
 } listIter;
 
-typedef struct list {
+typedef struct list {          //列表
     listNode *head;
     listNode *tail;
     void *(*dup)(void *ptr);
